@@ -1,0 +1,21 @@
+记录运维问题
+1，mysql 忘记root密码
+1.5, linux 忘记root密码
+
+2,  cdh安装的错误问题: agent下载parcel失败(server之前的.flood干扰), cm_guid不同
+supervisor连接不上, mysql驱动
+2.5, hadoop集群问题: hbase数据备份还原, hive导入导出
+ 
+3, 常用web服务器的配置使用: http,nginx,tomcat (虚拟站点，指令, 性能优化)
+3.5, ssl配置: httpd, nginx, 全站tls
+
+4, openssl命令使用
+
+5, sed,awk,grep/ vi 高级用法
+
+6, 反向代理，负载均衡
+
+7, 自动装机cobbler, grub修复bootloader
+
+8, dns解析服务
+
