@@ -1,0 +1,15 @@
+#!/bin/bash
+# chkconfig: 2345 90 90 
+# description: cdh.service ....
+
+agent=/opt/cm-5.*/etc/init.d/cloudera-scm-agent
+server=/opt/cm-5.*/etc/init.d/cloudera-scm-server
+cmd=$1
+
+case $1 in 
+  start)        $server start;  $agent start ;;
+  stop)         $agent stop;    $server stop ;;
+  status)       $server status; $agent status;;
+  restart)      $server restart; $agent restart;;
+  * )           echo "Usage :   $server start|restart|stop|status"
+esac

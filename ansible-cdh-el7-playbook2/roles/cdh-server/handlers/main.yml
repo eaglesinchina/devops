@@ -1,0 +1,5 @@
+---
+#- name: cdh_mysql_init
+#  script: scripts/mysql_cdh_init.sh creates=/tmp/cdh_mysql_init 
+- name: restart ntpd
+  service: name=ntpd state=restarted

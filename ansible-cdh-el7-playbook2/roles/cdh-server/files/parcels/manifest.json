@@ -1,0 +1,1825 @@
+{
+    "lastUpdated": 15130917300000,
+    "parcels": [
+        {
+            "parcelName": "CDH-5.12.2-1.cdh5.12.2.p0.4-sles12.parcel",
+            "components": [
+                {
+                    "pkg_version": "0.7.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "bigtop-tomcat",
+                    "version": "6.0.53-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.11.0+cdh5.12.2+102",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "crunch",
+                    "version": "0.11.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+173",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "flume-ng",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-0.20-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-hdfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-httpfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-kms",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-yarn",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5+cdh5.12.2+72",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase-solr",
+                    "version": "1.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.2.0+cdh5.12.2+391",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase",
+                    "version": "1.2.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive-hcatalog",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.9.0+cdh5.12.2+6547",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hue",
+                    "version": "3.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.9.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "impala",
+                    "version": "2.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+146",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "kite",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "llama",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9+cdh5.12.2+35",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "mahout",
+                    "version": "0.9-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.1.0+cdh5.12.2+455",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "oozie",
+                    "version": "4.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.0+cdh5.12.2+188",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "parquet",
+                    "version": "1.5.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.12.0+cdh5.12.2+111",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "pig",
+                    "version": "0.12.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.1+cdh5.12.2+344",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sentry",
+                    "version": "1.5.1-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.10.3+cdh5.12.2+520",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "solr",
+                    "version": "4.10.3-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+536",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "spark",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.4.6+cdh5.12.2+126",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop",
+                    "version": "1.4.6-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.99.5+cdh5.12.2+47",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop2",
+                    "version": "1.99.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9.0+cdh5.12.2+24",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "whirr",
+                    "version": "0.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.4.5+cdh5.12.2+122",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "zookeeper",
+                    "version": "3.4.5-cdh5.12.2"
+                }
+            ],
+            "conflicts": "SPARK2 (<< 2.0.0.cloudera2)",
+            "replaces": "IMPALA, SOLR, SPARK",
+            "hash": "f631fa508a999a3bb81c56a4756f8138bc68bb43"
+        },
+        {
+            "parcelName": "CDH-5.12.2-1.cdh5.12.2.p0.4-jessie.parcel",
+            "components": [
+                {
+                    "pkg_version": "0.7.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "bigtop-tomcat",
+                    "version": "6.0.53-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.11.0+cdh5.12.2+102",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "crunch",
+                    "version": "0.11.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+173",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "flume-ng",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-0.20-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-hdfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-httpfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-kms",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-yarn",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.2.0+cdh5.12.2+391",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase",
+                    "version": "1.2.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5+cdh5.12.2+72",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase-solr",
+                    "version": "1.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive-hcatalog",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.9.0+cdh5.12.2+6547",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hue",
+                    "version": "3.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.9.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "impala",
+                    "version": "2.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+146",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "kite",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "llama",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9+cdh5.12.2+35",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "mahout",
+                    "version": "0.9-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.1.0+cdh5.12.2+455",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "oozie",
+                    "version": "4.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.0+cdh5.12.2+188",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "parquet",
+                    "version": "1.5.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.12.0+cdh5.12.2+111",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "pig",
+                    "version": "0.12.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.1+cdh5.12.2+344",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sentry",
+                    "version": "1.5.1-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.10.3+cdh5.12.2+520",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "solr",
+                    "version": "4.10.3-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+536",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "spark",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.99.5+cdh5.12.2+47",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop2",
+                    "version": "1.99.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.4.6+cdh5.12.2+126",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop",
+                    "version": "1.4.6-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9.0+cdh5.12.2+24",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "whirr",
+                    "version": "0.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.4.5+cdh5.12.2+122",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "zookeeper",
+                    "version": "3.4.5-cdh5.12.2"
+                }
+            ],
+            "conflicts": "SPARK2 (<< 2.0.0.cloudera2)",
+            "replaces": "IMPALA, SOLR, SPARK",
+            "hash": "5aafef7de6f9bc33ab5afcac2860391dd7ad6603"
+        },
+        {
+            "parcelName": "CDH-5.12.2-1.cdh5.12.2.p0.4-sles11.parcel",
+            "components": [
+                {
+                    "pkg_version": "0.7.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "bigtop-tomcat",
+                    "version": "6.0.53-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.11.0+cdh5.12.2+102",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "crunch",
+                    "version": "0.11.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+173",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "flume-ng",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-0.20-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-hdfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-httpfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-kms",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-yarn",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.2.0+cdh5.12.2+391",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase",
+                    "version": "1.2.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5+cdh5.12.2+72",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase-solr",
+                    "version": "1.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive-hcatalog",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.9.0+cdh5.12.2+6547",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hue",
+                    "version": "3.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.9.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "impala",
+                    "version": "2.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+146",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "kite",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "llama",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9+cdh5.12.2+35",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "mahout",
+                    "version": "0.9-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.1.0+cdh5.12.2+455",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "oozie",
+                    "version": "4.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.0+cdh5.12.2+188",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "parquet",
+                    "version": "1.5.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.12.0+cdh5.12.2+111",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "pig",
+                    "version": "0.12.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.1+cdh5.12.2+344",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sentry",
+                    "version": "1.5.1-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.10.3+cdh5.12.2+520",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "solr",
+                    "version": "4.10.3-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+536",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "spark",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.99.5+cdh5.12.2+47",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop2",
+                    "version": "1.99.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.4.6+cdh5.12.2+126",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop",
+                    "version": "1.4.6-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9.0+cdh5.12.2+24",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "whirr",
+                    "version": "0.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.4.5+cdh5.12.2+122",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "zookeeper",
+                    "version": "3.4.5-cdh5.12.2"
+                }
+            ],
+            "conflicts": "SPARK2 (<< 2.0.0.cloudera2)",
+            "replaces": "IMPALA, SOLR, SPARK",
+            "hash": "01ff2a8c9f3a99fb014834af1ba6b9ff55974f35"
+        },
+        {
+            "parcelName": "CDH-5.12.2-1.cdh5.12.2.p0.4-el5.parcel",
+            "components": [
+                {
+                    "pkg_version": "0.7.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "bigtop-tomcat",
+                    "version": "6.0.53-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.11.0+cdh5.12.2+102",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "crunch",
+                    "version": "0.11.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+173",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "flume-ng",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-0.20-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-hdfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-httpfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-kms",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-yarn",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5+cdh5.12.2+72",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase-solr",
+                    "version": "1.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.2.0+cdh5.12.2+391",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase",
+                    "version": "1.2.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive-hcatalog",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.9.0+cdh5.12.2+6547",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hue",
+                    "version": "3.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.9.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "impala",
+                    "version": "2.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+146",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "kite",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "llama",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9+cdh5.12.2+35",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "mahout",
+                    "version": "0.9-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.1.0+cdh5.12.2+455",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "oozie",
+                    "version": "4.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.0+cdh5.12.2+188",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "parquet",
+                    "version": "1.5.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.12.0+cdh5.12.2+111",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "pig",
+                    "version": "0.12.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.1+cdh5.12.2+344",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sentry",
+                    "version": "1.5.1-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.10.3+cdh5.12.2+520",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "solr",
+                    "version": "4.10.3-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+536",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "spark",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.4.6+cdh5.12.2+126",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop",
+                    "version": "1.4.6-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.99.5+cdh5.12.2+47",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop2",
+                    "version": "1.99.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9.0+cdh5.12.2+24",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "whirr",
+                    "version": "0.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.4.5+cdh5.12.2+122",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "zookeeper",
+                    "version": "3.4.5-cdh5.12.2"
+                }
+            ],
+            "conflicts": "SPARK2 (<< 2.0.0.cloudera2)",
+            "replaces": "IMPALA, SOLR, SPARK",
+            "hash": "f1e76cd2db1ff0321f64e07cfb8b4ee112ecdba4"
+        },
+        {
+            "parcelName": "CDH-5.12.2-1.cdh5.12.2.p0.4-el6.parcel",
+            "components": [
+                {
+                    "pkg_version": "0.7.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "bigtop-tomcat",
+                    "version": "6.0.53-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.11.0+cdh5.12.2+102",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "crunch",
+                    "version": "0.11.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+173",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "flume-ng",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-0.20-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-hdfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-httpfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-kms",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-yarn",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.2.0+cdh5.12.2+391",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase",
+                    "version": "1.2.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5+cdh5.12.2+72",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase-solr",
+                    "version": "1.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive-hcatalog",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.9.0+cdh5.12.2+6547",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hue",
+                    "version": "3.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.9.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "impala",
+                    "version": "2.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+146",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "kite",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "llama",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9+cdh5.12.2+35",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "mahout",
+                    "version": "0.9-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.1.0+cdh5.12.2+455",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "oozie",
+                    "version": "4.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.0+cdh5.12.2+188",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "parquet",
+                    "version": "1.5.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.12.0+cdh5.12.2+111",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "pig",
+                    "version": "0.12.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.1+cdh5.12.2+344",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sentry",
+                    "version": "1.5.1-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.10.3+cdh5.12.2+520",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "solr",
+                    "version": "4.10.3-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+536",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "spark",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.99.5+cdh5.12.2+47",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop2",
+                    "version": "1.99.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.4.6+cdh5.12.2+126",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop",
+                    "version": "1.4.6-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9.0+cdh5.12.2+24",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "whirr",
+                    "version": "0.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.4.5+cdh5.12.2+122",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "zookeeper",
+                    "version": "3.4.5-cdh5.12.2"
+                }
+            ],
+            "conflicts": "SPARK2 (<< 2.0.0.cloudera2)",
+            "replaces": "IMPALA, SOLR, SPARK",
+            "hash": "97350e4fd6edb055c125acc12b0f9507639f5cc8"
+        },
+        {
+            "parcelName": "CDH-5.12.2-1.cdh5.12.2.p0.4-trusty.parcel",
+            "components": [
+                {
+                    "pkg_version": "0.7.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "bigtop-tomcat",
+                    "version": "6.0.53-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.11.0+cdh5.12.2+102",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "crunch",
+                    "version": "0.11.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+173",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "flume-ng",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-0.20-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-hdfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-httpfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-kms",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-yarn",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.2.0+cdh5.12.2+391",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase",
+                    "version": "1.2.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5+cdh5.12.2+72",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase-solr",
+                    "version": "1.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive-hcatalog",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.9.0+cdh5.12.2+6547",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hue",
+                    "version": "3.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.9.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "impala",
+                    "version": "2.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+146",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "kite",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "llama",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9+cdh5.12.2+35",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "mahout",
+                    "version": "0.9-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.1.0+cdh5.12.2+455",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "oozie",
+                    "version": "4.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.0+cdh5.12.2+188",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "parquet",
+                    "version": "1.5.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.12.0+cdh5.12.2+111",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "pig",
+                    "version": "0.12.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.1+cdh5.12.2+344",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sentry",
+                    "version": "1.5.1-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.10.3+cdh5.12.2+520",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "solr",
+                    "version": "4.10.3-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+536",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "spark",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.99.5+cdh5.12.2+47",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop2",
+                    "version": "1.99.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.4.6+cdh5.12.2+126",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop",
+                    "version": "1.4.6-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9.0+cdh5.12.2+24",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "whirr",
+                    "version": "0.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.4.5+cdh5.12.2+122",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "zookeeper",
+                    "version": "3.4.5-cdh5.12.2"
+                }
+            ],
+            "conflicts": "SPARK2 (<< 2.0.0.cloudera2)",
+            "replaces": "IMPALA, SOLR, SPARK",
+            "hash": "338b74f898842a834264cc03280de5062fa7889f"
+        },
+        {
+            "parcelName": "CDH-5.12.2-1.cdh5.12.2.p0.4-wheezy.parcel",
+            "components": [
+                {
+                    "pkg_version": "0.7.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "bigtop-tomcat",
+                    "version": "6.0.53-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.11.0+cdh5.12.2+102",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "crunch",
+                    "version": "0.11.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+173",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "flume-ng",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-0.20-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-hdfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-httpfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-kms",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-yarn",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5+cdh5.12.2+72",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase-solr",
+                    "version": "1.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.2.0+cdh5.12.2+391",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase",
+                    "version": "1.2.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive-hcatalog",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.9.0+cdh5.12.2+6547",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hue",
+                    "version": "3.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.9.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "impala",
+                    "version": "2.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+146",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "kite",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "llama",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9+cdh5.12.2+35",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "mahout",
+                    "version": "0.9-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.1.0+cdh5.12.2+455",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "oozie",
+                    "version": "4.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.0+cdh5.12.2+188",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "parquet",
+                    "version": "1.5.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.12.0+cdh5.12.2+111",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "pig",
+                    "version": "0.12.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.1+cdh5.12.2+344",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sentry",
+                    "version": "1.5.1-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.10.3+cdh5.12.2+520",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "solr",
+                    "version": "4.10.3-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+536",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "spark",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.4.6+cdh5.12.2+126",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop",
+                    "version": "1.4.6-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.99.5+cdh5.12.2+47",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop2",
+                    "version": "1.99.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9.0+cdh5.12.2+24",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "whirr",
+                    "version": "0.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.4.5+cdh5.12.2+122",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "zookeeper",
+                    "version": "3.4.5-cdh5.12.2"
+                }
+            ],
+            "conflicts": "SPARK2 (<< 2.0.0.cloudera2)",
+            "replaces": "IMPALA, SOLR, SPARK",
+            "hash": "beeb28e20ac9e97b896d7be1bd620377b2ac1d6b"
+        },
+        {
+            "parcelName": "CDH-5.12.2-1.cdh5.12.2.p0.4-xenial.parcel",
+            "components": [
+                {
+                    "pkg_version": "0.7.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "bigtop-tomcat",
+                    "version": "6.0.53-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.11.0+cdh5.12.2+102",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "crunch",
+                    "version": "0.11.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+173",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "flume-ng",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-0.20-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-hdfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-httpfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-kms",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-yarn",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.2.0+cdh5.12.2+391",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase",
+                    "version": "1.2.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5+cdh5.12.2+72",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase-solr",
+                    "version": "1.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive-hcatalog",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.9.0+cdh5.12.2+6547",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hue",
+                    "version": "3.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.9.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "impala",
+                    "version": "2.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+146",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "kite",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "llama",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9+cdh5.12.2+35",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "mahout",
+                    "version": "0.9-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.1.0+cdh5.12.2+455",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "oozie",
+                    "version": "4.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.0+cdh5.12.2+188",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "parquet",
+                    "version": "1.5.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.12.0+cdh5.12.2+111",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "pig",
+                    "version": "0.12.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.1+cdh5.12.2+344",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sentry",
+                    "version": "1.5.1-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.10.3+cdh5.12.2+520",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "solr",
+                    "version": "4.10.3-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+536",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "spark",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.99.5+cdh5.12.2+47",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop2",
+                    "version": "1.99.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.4.6+cdh5.12.2+126",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop",
+                    "version": "1.4.6-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9.0+cdh5.12.2+24",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "whirr",
+                    "version": "0.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.4.5+cdh5.12.2+122",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "zookeeper",
+                    "version": "3.4.5-cdh5.12.2"
+                }
+            ],
+            "conflicts": "SPARK2 (<< 2.0.0.cloudera2)",
+            "replaces": "IMPALA, SOLR, SPARK",
+            "hash": "6265c95aa85195f286cdc38f8870f857a6d28295"
+        },
+        {
+            "parcelName": "CDH-5.12.2-1.cdh5.12.2.p0.4-el7.parcel",
+            "components": [
+                {
+                    "pkg_version": "0.7.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "bigtop-tomcat",
+                    "version": "6.0.53-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.11.0+cdh5.12.2+102",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "crunch",
+                    "version": "0.11.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+173",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "flume-ng",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-0.20-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-hdfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-httpfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-kms",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-yarn",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.2.0+cdh5.12.2+391",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase",
+                    "version": "1.2.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5+cdh5.12.2+72",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase-solr",
+                    "version": "1.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive-hcatalog",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.9.0+cdh5.12.2+6547",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hue",
+                    "version": "3.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.9.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "impala",
+                    "version": "2.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+146",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "kite",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "llama",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9+cdh5.12.2+35",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "mahout",
+                    "version": "0.9-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.1.0+cdh5.12.2+455",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "oozie",
+                    "version": "4.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.0+cdh5.12.2+188",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "parquet",
+                    "version": "1.5.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.12.0+cdh5.12.2+111",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "pig",
+                    "version": "0.12.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.1+cdh5.12.2+344",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sentry",
+                    "version": "1.5.1-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.10.3+cdh5.12.2+520",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "solr",
+                    "version": "4.10.3-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+536",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "spark",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.99.5+cdh5.12.2+47",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop2",
+                    "version": "1.99.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.4.6+cdh5.12.2+126",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop",
+                    "version": "1.4.6-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9.0+cdh5.12.2+24",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "whirr",
+                    "version": "0.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.4.5+cdh5.12.2+122",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "zookeeper",
+                    "version": "3.4.5-cdh5.12.2"
+                }
+            ],
+            "conflicts": "SPARK2 (<< 2.0.0.cloudera2)",
+            "replaces": "IMPALA, SOLR, SPARK",
+            "hash": "370c3be2a726c2708d8129700a6b51adf7cb7c13"
+        },
+        {
+            "parcelName": "CDH-5.12.2-1.cdh5.12.2.p0.4-precise.parcel",
+            "components": [
+                {
+                    "pkg_version": "0.7.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "bigtop-tomcat",
+                    "version": "6.0.53-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.11.0+cdh5.12.2+102",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "crunch",
+                    "version": "0.11.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+173",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "flume-ng",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-0.20-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-hdfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-httpfs",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-kms",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-mapreduce",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.6.0+cdh5.12.2+2573",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hadoop-yarn",
+                    "version": "2.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.2.0+cdh5.12.2+391",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase",
+                    "version": "1.2.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5+cdh5.12.2+72",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hbase-solr",
+                    "version": "1.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.1.0+cdh5.12.2+1218",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hive-hcatalog",
+                    "version": "1.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.9.0+cdh5.12.2+6547",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "hue",
+                    "version": "3.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "2.9.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "impala",
+                    "version": "2.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+146",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "kite",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.0.0+cdh5.12.2+0",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "llama",
+                    "version": "1.0.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9+cdh5.12.2+35",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "mahout",
+                    "version": "0.9-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.1.0+cdh5.12.2+455",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "oozie",
+                    "version": "4.1.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.0+cdh5.12.2+188",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "parquet",
+                    "version": "1.5.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.12.0+cdh5.12.2+111",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "pig",
+                    "version": "0.12.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.5.1+cdh5.12.2+344",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sentry",
+                    "version": "1.5.1-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "4.10.3+cdh5.12.2+520",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "solr",
+                    "version": "4.10.3-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.6.0+cdh5.12.2+536",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "spark",
+                    "version": "1.6.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.99.5+cdh5.12.2+47",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop2",
+                    "version": "1.99.5-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "1.4.6+cdh5.12.2+126",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "sqoop",
+                    "version": "1.4.6-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "0.9.0+cdh5.12.2+24",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "whirr",
+                    "version": "0.9.0-cdh5.12.2"
+                },
+                {
+                    "pkg_version": "3.4.5+cdh5.12.2+122",
+                    "pkg_release": "1.cdh5.12.2.p0.5",
+                    "name": "zookeeper",
+                    "version": "3.4.5-cdh5.12.2"
+                }
+            ],
+            "conflicts": "SPARK2 (<< 2.0.0.cloudera2)",
+            "replaces": "IMPALA, SOLR, SPARK",
+            "hash": "f1e82b4c83c267973c2c3a1ad4fcf99bcbbc35a0"
+        }
+    ]
+}

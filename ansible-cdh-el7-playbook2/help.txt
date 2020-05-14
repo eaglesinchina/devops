@@ -1,0 +1,20 @@
+#1, 修改三个配置(hosts:集群角色分配,  hosts-cdh:集群的主机名ip映射,  group_vars/all:设置cdh-master的ip
+[root@test-c6 ansible-cdh-el6-playbook]# cat hosts
+[cdh-server]
+server  ansible_host=192.168.56.161 ansible_port=22 ansible_ssh_user=root ansible_ssh_pass=vagrant
+[cdh-agent]
+agent1   ansible_host=192.168.56.162 ansible_port=22 ansible_ssh_user=root ansible_ssh_pass=vagrant
+agent2   ansible_host=192.168.56.160 ansible_port=22 ansible_ssh_user=root ansible_ssh_pass=vagrant
+
+[root@test-c6 ansible-cdh-el6-playbook]# cat hosts-cdh
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+192.168.56.160 c6 cdh-server
+192.168.56.161 test-c6 cdh-agent1
+192.168.56.162 test-c62 cdh-agent2
+
+[root@test-c6 ansible-cdh-el6-playbook]# cat group_vars/all
+cdh_server_ip: 192.168.56.161
+
+#2, 开始安装: ansible环境准备（控制机上安装ansible), 安装cdh
+./install.sh 
+

@@ -1,0 +1,17 @@
+  - name: cp cdh agent service file to remot host:/etc/init.d/cdh
+    copy: src=cdh dest=/etc/init.d/cdh mode=0755
+  - name: create cdh user
+    user: name=cloudera-scm create_home=no home=/opt/cm-5.12.2/run/cloudera-scm-server shell=/bin/false
+  - name: chown cloudera-scm /opt/cm*
+    file: path=/opt/cm-5.12.2  state=directory owner=cloudera-scm group=cloudera-scm recurse=yes
+  - name: change cdh server ip
+    lineinfile: dest=/opt/cm-5.12.2/etc/cloudera-scm-agent/config.ini  regexp="server_host=*" line="server_host={{ cdh_server_ip }}"
+    notify: restart cdh
+    tags: agent2server
+  - name: config ntp server
+    lineinfile: dest=/etc/ntp.conf regexp="{{ cdh_server_ip }}" line="server {{ cdh_server_ip }}" 
+    notify: restart ntpd
+
+  - name: start cdh agent
+    service: name=cdh state=started enabled=true
+

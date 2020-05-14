@@ -1,0 +1,61 @@
+  ########### copy files ###############
+  - name: copy cdh-packs to remote hosts:/root/cdh/
+    copy:
+      src: cdh-packs
+      dest: /root/cdh/
+  - name: copy rpm-deps to remote hosts:/root/cdh/
+    copy:
+      src: rpm-deps
+      dest: /root/cdh/
+  - name: copy jdbc-jars to remote hosts
+    copy:
+      src: jars/
+      dest: /usr/share/java/
+  - name: copy cdh-hosts to remote hosts:/etc/hosts
+    copy:
+      src: hosts
+      dest: /etc/hosts
+      backup: true
+  - name: set sys env:swap,hugepage
+    script: sys_env.sh creates=/tmp/cdh_sys_env
+
+  ########### set sys env ###############
+  - name: change timezone
+    file: src=/usr/share/zoneinfo/Asia/Shanghai path=/etc/localtime state=link force=true
+  - name: openfile
+    lineinfile: 
+      dest: /etc/security/limits.conf
+      regexp: "\\* - nofile 65536"
+      line: "* - nofile 65536"
+  - name: turn off firewall
+    service: 
+      name: firewalld 
+      state: stopped 
+      enabled: no
+  - name: turn off selinux
+    lineinfile: 
+      dest: /etc/selinux/config  
+      regexp: "^SELINUX=" 
+      line: "SELINUX=disabled"
+  - name: turn off selinux now
+    shell: getenforce |grep -i enforcing && setenforce 0 || echo
+  - name: login with limits.so
+    lineinfile:
+      dest: /etc/pam.d/login
+      regexp: "pam_limits.so"
+      line: "session required     pam_limits.so"
+    notify: restart sshd
+
+  ########### install common packs/tar cloudera-manager.xx.tar.gz ###############
+  - name: install dep packages
+    command: chdir=/root/cdh/rpm-deps/ rpm -Uvh *.rpm --force creates=/opt/cloudera
+  - name: untar cdh packs
+    shell: chdir=/root/cdh/cdh-packs/ tar -zxf cloudera-manager-*.tar.gz -C /opt/ creates=/opt/cloudera/
+  - name: install jdk
+    command: chdir=/root/cdh/cdh-packs/ rpm -Uvh jdk*.rpm --force creates=/usr/java/default/
+  - name: start ntpd
+    service: name=ntpd state=started enabled=yes
+
+  ########### add jars to cloudera-manager ###############
+  - name: copy jdbc-jars to cloudera-manager
+    shell: chdir=/usr/share/java/  cp *.jar /opt/cm*/share/cmf/lib  creates=/opt/cm*/share/cmf/lib/mysql-connector-java.jar

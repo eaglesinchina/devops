@@ -1,0 +1,5 @@
+[cdh-server]
+server  ansible_host=192.168.56.171 ansible_port=22 ansible_ssh_user=root ansible_ssh_pass=vagrant
+
+[cdh-agent]
+agent1   ansible_host=192.168.56.170 ansible_port=22 ansible_ssh_user=root ansible_ssh_pass=vagrant

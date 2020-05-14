@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  roles: 
+  - common
+
+
+- hosts: cdh-server
+  roles:
+  - cdh-server
+
+- hosts: cdh-agent
+  roles:
+  - cdh-agent
+  tags: agentstart
