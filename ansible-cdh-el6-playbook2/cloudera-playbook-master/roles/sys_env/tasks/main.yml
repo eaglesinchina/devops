@@ -1,0 +1,43 @@
+---
+- name: no huge_page
+  script: huge_page.sh creates=/tmp/huge_page
+
+- name: change shanghai timezone
+  timezone:
+    hwclock: local
+    name: Asia/Shanghai
+
+- name: change vm.swappiness
+  sysctl:
+    key: vm.swappiness
+    value: 1
+    reload: yes
+
+
+- name: increase openfile to 65536
+  lineinfile:
+    dest: /etc/security/limits.conf
+    regexp: "\\* - nofile 65536"
+    line: "* - nofile 65536"
+
+- name: turn off firewall
+  service:
+    name: iptables
+    state: stopped
+    enabled: no
+
+- name: turn off selinux
+  lineinfile:
+    dest: /etc/selinux/config
+    regexp: "^SELINUX="
+    line: "SELINUX=disabled"
+
+- name: turn off selinux now
+  shell: getenforce |grep -i enforcing && setenforce 0 || echo
+
+- name: login with limits.so
+  lineinfile:
+    dest: /etc/pam.d/login
+    regexp: "pam_limits.so"
+    line: "session required     pam_limits.so"
+  notify: restart sshd

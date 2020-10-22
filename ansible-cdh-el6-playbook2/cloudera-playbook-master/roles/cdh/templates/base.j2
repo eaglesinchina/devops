@@ -1,0 +1,22 @@
+{
+  "cdhVersion" : "{{ cluster_version_cdh }}",
+  "displayName" : "{{ cluster_display_name }}",
+  "cmVersion" : "{{ cluster_version_cm }}",
+  "products" : [
+        {
+            "product": "CDH",
+            "version": "{{ product_cdh_version }}"
+        }
+  ],
+
+  "services" : [
+    {% set serv_j = joiner(",") %}
+    {% for service in cdh_services %}
+    {{ serv_j() }}
+    {% set t = service['type'] + '.j2' %}{% include t %}
+    {% endfor %}
+  ],
+
+  "hostTemplates" : {% include 'host.j2' %},
+  "instantiator" : {% include 'instantiator.j2' %}
+}

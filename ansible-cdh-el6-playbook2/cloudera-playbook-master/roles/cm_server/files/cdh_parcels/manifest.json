@@ -1,0 +1,798 @@
+   "cluster_template_json": {
+        "cdhVersion": "5.12.0",
+        "cmVersion": "5.12.2",
+        "displayName": "cluster_1",
+        "hostTemplates": [
+            {
+                "cardinality": 1,
+                "refName": "HostTemplate-Gateway",
+                "roleConfigGroupsRefNames": [
+                    "HDFS-1-GATEWAY-BASE",
+                    "HIVE-1-GATEWAY-BASE",
+                    "SPARK_ON_YARN-1-GATEWAY-BASE",
+                    "YARN-1-GATEWAY-BASE"
+                ]
+            },
+            {
+                "cardinality": 1,
+                "refName": "HostTemplate-Edge",
+                "roleConfigGroupsRefNames": [
+                    "HDFS-1-HTTPFS-BASE",
+                    "HBASE-1-HBASERESTSERVER-BASE",
+                    "HBASE-1-HBASETHRIFTSERVER-BASE",
+                    "HIVE-1-HIVESERVER2-BASE",
+                    "HUE-1-HUE_SERVER-BASE",
+                    "HUE-1-HUE_LOAD_BALANCER-BASE",
+                    "HUE-1-KT_RENEWER-BASE",
+                    "OOZIE-1-OOZIE_SERVER-BASE",
+                    "SPARK_ON_YARN-1-GATEWAY-BASE",
+                    "YARN-1-GATEWAY-BASE"
+                ]
+            },
+            {
+                "cardinality": 1,
+                "refName": "HostTemplate-Master1",
+                "roleConfigGroupsRefNames": [
+                    "HBASE-1-MASTER-BASE",
+                    "HDFS-1-NAMENODE-BASE",
+                    "HDFS-1-FAILOVERCONTROLLER-BASE",
+                    "HDFS-1-JOURNALNODE-BASE",
+                    "HIVE-1-HIVEMETASTORE-BASE",
+                    "SENTRY-1-SENTRY_SERVER-BASE",
+                    "YARN-1-RESOURCEMANAGER-BASE",
+                    "ZOOKEEPER-1-SERVER-BASE"
+                ]
+            },
+            {
+                "cardinality": 1,
+                "refName": "HostTemplate-Master2",
+                "roleConfigGroupsRefNames": [
+                    "HBASE-1-MASTER-BASE",
+                    "HDFS-1-NAMENODE-BASE",
+                    "HDFS-1-FAILOVERCONTROLLER-BASE",
+                    "HDFS-1-JOURNALNODE-BASE",
+                    "HIVE-1-HIVEMETASTORE-BASE",
+                    "SENTRY-1-SENTRY_SERVER-BASE",
+                    "YARN-1-RESOURCEMANAGER-BASE",
+                    "ZOOKEEPER-1-SERVER-BASE"
+                ]
+            },
+            {
+                "cardinality": 1,
+                "refName": "HostTemplate-Master3",
+                "roleConfigGroupsRefNames": [
+                    "HBASE-1-MASTER-BASE",
+                    "HDFS-1-BALANCER-BASE",
+                    "HDFS-1-JOURNALNODE-BASE",
+                    "IMPALA-1-CATALOGSERVER-BASE",
+                    "IMPALA-1-STATESTORE-BASE",
+                    "SPARK_ON_YARN-1-SPARK_YARN_HISTORY_SERVER-BASE",
+                    "YARN-1-JOBHISTORY-BASE",
+                    "ZOOKEEPER-1-SERVER-BASE"
+                ]
+            },
+            {
+                "cardinality": 3,
+                "refName": "HostTemplate-Workers",
+                "roleConfigGroupsRefNames": [
+                    "HBASE-1-REGIONSERVER-BASE",
+                    "HDFS-1-DATANODE-BASE",
+                    "HIVE-1-GATEWAY-BASE",
+                    "IMPALA-1-IMPALAD-BASE",
+                    "SPARK_ON_YARN-1-GATEWAY-BASE",
+                    "YARN-1-NODEMANAGER-BASE"
+                ]
+            }
+        ],
+        "instantiator": {
+            "clusterName": "cluster_1",
+            "hosts": [
+                {
+                    "hostName": "cdh-c6-master",
+                    "hostTemplateRefName": "HostTemplate-Master3"
+                },
+                {
+                    "hostName": "cdh-c6-agent",
+                    "hostTemplateRefName": "HostTemplate-Edge",
+                    "roleRefNames": [
+                        "HDFS-HTTPFS-1"
+                    ]
+                }
+            ],
+            "variables": [
+                {
+                    "name": "DFS_DATA_DIR_LIST",
+                    "value": "/dfs/dn"
+                },
+                {
+                    "name": "DFS_NAME_DIR_LIST",
+                    "value": "/dfs/nn"
+                },
+                {
+                    "name": "DFS_JOURNALNODE_EDITS_DIR",
+                    "value": "/dfs/jn"
+                },
+                {
+                    "name": "FS_CHECKPOINT_DIR_LIST",
+                    "value": "/dfs/snn"
+                },
+                {
+                    "name": "SCRATCH_DIRS",
+                    "value": "/tmp/impala"
+                },
+                {
+                    "name": "YARN_NODEMANAGER_LOCAL_DIRS",
+                    "value": "/tmp/nm"
+                },
+                {
+                    "name": "YARN_NODEMANAGER_LOG_DIRS",
+                    "value": "/var/log/nm"
+                }
+            ]
+        },
+        "products": [
+            {
+                "product": "CDH",
+                "version": "5.12.0-1.cdh5.12.0.p0.29"
+            }
+        ],
+        "services": [
+            {
+                "refName": "HBASE-1",
+                "roleConfigGroups": [
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "HBASE-1-MASTER-BASE",
+                        "roleType": "MASTER"
+                    },
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "HBASE-1-REGIONSERVER-BASE",
+                        "roleType": "REGIONSERVER"
+                    },
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "HBASE-1-HBASETHRIFTSERVER-BASE",
+                        "roleType": "HBASETHRIFTSERVER"
+                    },
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "HBASE-1-HBASERESTSERVER-BASE",
+                        "roleType": "HBASERESTSERVER"
+                    }
+                ],
+                "serviceConfigs": [
+                    {
+                        "name": "hdfs_service",
+                        "ref": "HDFS-1"
+                    },
+                    {
+                        "name": "hbase_restserver_security_authentication",
+                        "value": "kerberos"
+                    },
+                    {
+                        "name": "hbase_security_authentication",
+                        "value": "kerberos"
+                    },
+                    {
+                        "name": "zookeeper_service",
+                        "ref": "ZOOKEEPER-1"
+                    }
+                ],
+                "serviceType": "HBASE"
+            },
+            {
+                "refName": "HDFS-1",
+                "roleConfigGroups": [
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "HDFS-1-FAILOVERCONTROLLER-BASE",
+                        "roleType": "FAILOVERCONTROLLER"
+                    },
+                    {
+                        "base": true,
+                        "configs": [
+                            {
+                                "name": "dfs_data_dir_list",
+                                "variable": "DFS_DATA_DIR_LIST"
+                            },
+                            {
+                                "name": "dfs_datanode_port",
+                                "value": "1004"
+                            },
+                            {
+                                "name": "dfs_datanode_http_port",
+                                "value": "1006"
+                            }
+                        ],
+                        "refName": "HDFS-1-DATANODE-BASE",
+                        "roleType": "DATANODE"
+                    },
+                    {
+                        "base": true,
+                        "configs": [
+                            {
+                                "name": "fs_checkpoint_dir_list",
+                                "variable": "FS_CHECKPOINT_DIR_LIST"
+                            }
+                        ],
+                        "refName": "HDFS-1-SECONDARYNAMENODE-BASE",
+                        "roleType": "SECONDARYNAMENODE"
+                    },
+                    {
+                        "base": true,
+                        "configs": [
+                            {
+                                "name": "dfs_federation_namenode_nameservice",
+                                "value": "nameservice1"
+                            },
+                            {
+                                "name": "dfs_namenode_quorum_journal_name",
+                                "value": "nameservice1"
+                            },
+                            {
+                                "name": "autofailover_enabled",
+                                "value": "true"
+                            },
+                            {
+                                "name": "dfs_name_dir_list",
+                                "variable": "DFS_NAME_DIR_LIST"
+                            }
+                        ],
+                        "refName": "HDFS-1-NAMENODE-BASE",
+                        "roleType": "NAMENODE"
+                    },
+                    {
+                        "base": true,
+                        "configs": [
+                            {
+                                "name": "dfs_journalnode_edits_dir",
+                                "variable": "DFS_JOURNALNODE_EDITS_DIR"
+                            }
+                        ],
+                        "refName": "HDFS-1-JOURNALNODE-BASE",
+                        "roleType": "JOURNALNODE"
+                    },
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "HDFS-1-HTTPFS-BASE",
+                        "roleType": "HTTPFS"
+                    },
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "HDFS-1-NFSGATEWAY-BASE",
+                        "roleType": "NFSGATEWAY"
+                    },
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "HDFS-1-BALANCER-BASE",
+                        "roleType": "BALANCER"
+                    },
+                    {
+                        "base": true,
+                        "configs": [
+                            {
+                                "name": "dfs_client_use_trash",
+                                "value": "true"
+                            }
+                        ],
+                        "refName": "HDFS-1-GATEWAY-BASE",
+                        "roleType": "GATEWAY"
+                    }
+                ],
+                "roles": [
+                    {
+                        "refName": "HDFS-HTTPFS-1",
+                        "roleType": "HTTPFS"
+                    }
+                ],
+                "serviceConfigs": [
+                    {
+                        "name": "dfs_namenode_acls_enabled",
+                        "value": "true"
+                    },
+                    {
+                        "name": "hadoop_security_authorization",
+                        "value": "true"
+                    },
+                    {
+                        "name": "hadoop_security_authentication",
+                        "value": "kerberos"
+                    },
+                    {
+                        "name": "dfs_ha_fencing_methods",
+                        "value": "shell(true)"
+                    },
+                    {
+                        "name": "hadoop_secure_web_ui",
+                        "value": "true"
+                    },
+                    {
+                        "name": "zookeeper_service",
+                        "ref": "ZOOKEEPER-1"
+                    }
+                ],
+                "serviceType": "HDFS"
+            },
+            {
+                "refName": "HIVE-1",
+                "roleConfigGroups": [
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "HIVE-1-GATEWAY-BASE",
+                        "roleType": "GATEWAY"
+                    },
+                    {
+                        "base": true,
+                        "configs": [
+                            {
+                                "name": "hive_webhcat_address_port",
+                                "value": "7272"
+                            }
+                        ],
+                        "refName": "HIVE-1-WEBHCAT-BASE",
+                        "roleType": "WEBHCAT"
+                    },
+                    {
+                        "base": true,
+                        "configs": [
+                            {
+                                "name": "hive_enable_db_notification",
+                                "value": "true"
+                            },
+                            {
+                                "name": "hive_metastore_delegation_token_store",
+                                "value": "org.apache.hadoop.hive.thrift.DBTokenStore"
+                            }
+                        ],
+                        "refName": "HIVE-1-HIVEMETASTORE-BASE",
+                        "roleType": "HIVEMETASTORE"
+                    },
+                    {
+                        "base": true,
+                        "configs": [
+                            {
+                                "name": "hiveserver2_enable_impersonation",
+                                "value": "false"
+                            }
+                        ],
+                        "refName": "HIVE-1-HIVESERVER2-BASE",
+                        "roleType": "HIVESERVER2"
+                    }
+                ],
+                "serviceConfigs": [
+                    {
+                        "name": "hive_metastore_database_host",
+                        "value": "192.168.56.201"
+                    },
+                    {
+                        "name": "hive_metastore_database_type",
+                        "value": "mysql"
+                    },
+                    {
+                        "name": "hive_metastore_database_name",
+                        "value": "metastore"
+                    },
+                    {
+                        "name": "hive_metastore_database_user",
+                        "value": "hive"
+                    },
+                    {
+                        "name": "hive_metastore_database_password",
+                        "value": "hive_password"
+                    },
+                    {
+                        "name": "spark_on_yarn_service",
+                        "ref": "SPARK_ON_YARN-1"
+                    },
+                    {
+                        "name": "mapreduce_yarn_service",
+                        "ref": "YARN-1"
+                    },
+                    {
+                        "name": "zookeeper_service",
+                        "ref": "ZOOKEEPER-1"
+                    },
+                    {
+                        "name": "sentry_service",
+                        "ref": "SENTRY-1"
+                    }
+                ],
+                "serviceType": "HIVE"
+            },
+            {
+                "refName": "HUE-1",
+                "roleConfigGroups": [
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "HUE-1-HUE_SERVER-BASE",
+                        "roleType": "HUE_SERVER"
+                    },
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "HUE-1-HUE_LOAD_BALANCER-BASE",
+                        "roleType": "HUE_LOAD_BALANCER"
+                    },
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "HUE-1-KT_RENEWER-BASE",
+                        "roleType": "KT_RENEWER"
+                    }
+                ],
+                "serviceConfigs": [
+                    {
+                        "name": "database_host",
+                        "value": "192.168.56.201"
+                    },
+                    {
+                        "name": "database_type",
+                        "value": "mysql"
+                    },
+                    {
+                        "name": "database_name",
+                        "value": "hue"
+                    },
+                    {
+                        "name": "database_user",
+                        "value": "hue"
+                    },
+                    {
+                        "name": "database_password",
+                        "value": "hue_password"
+                    },
+                    {
+                        "name": "oozie_service",
+                        "ref": "OOZIE-1"
+                    },
+                    {
+                        "name": "impala_service",
+                        "ref": "IMPALA-1"
+                    },
+                    {
+                        "name": "hive_service",
+                        "ref": "HIVE-1"
+                    },
+                    {
+                        "name": "sentry_service",
+                        "ref": "SENTRY-1"
+                    },
+                    {
+                        "name": "hue_service_safety_valve",
+                        "value": "[impala]\nserver_port=21051\n\n[beeswax]\ndownload_cell_limit=10"
+                    },
+                    {
+                        "name": "zookeeper_service",
+                        "ref": "ZOOKEEPER-1"
+                    },
+                    {
+                        "name": "hue_webhdfs",
+                        "ref": "HDFS-HTTPFS-1"
+                    }
+                ],
+                "serviceType": "HUE"
+            },
+            {
+                "refName": "IMPALA-1",
+                "roleConfigGroups": [
+                    {
+                        "base": true,
+                        "configs": [
+                            {
+                                "name": "enable_audit_event_log",
+                                "value": "true"
+                            },
+                            {
+                                "name": "scratch_dirs",
+                                "variable": "SCRATCH_DIRS"
+                            },
+                            {
+                                "name": "logbuflevel",
+                                "value": "-1"
+                            }
+                        ],
+                        "refName": "IMPALA-1-IMPALAD-BASE",
+                        "roleType": "IMPALAD"
+                    },
+                    {
+                        "base": true,
+                        "configs": [
+                            {
+                                "name": "logbuflevel",
+                                "value": "-1"
+                            },
+                            {
+                                "name": "catalogd_embedded_jvm_heapsize",
+                                "value": "603979776"
+                            }
+                        ],
+                        "refName": "IMPALA-1-CATALOGSERVER-BASE",
+                        "roleType": "CATALOGSERVER"
+                    },
+                    {
+                        "base": true,
+                        "configs": [
+                            {
+                                "name": "logbuflevel",
+                                "value": "-1"
+                            }
+                        ],
+                        "refName": "IMPALA-1-STATESTORE-BASE",
+                        "roleType": "STATESTORE"
+                    }
+                ],
+                "serviceConfigs": [
+                    {
+                        "name": "impala_cmd_args_safety_valve",
+                        "value": ""
+                    },
+                    {
+                        "name": "hdfs_service",
+                        "ref": "HDFS-1"
+                    },
+                    {
+                        "name": "admission_control_enabled",
+                        "value": "true"
+                    },
+                    {
+                        "name": "sentry_service",
+                        "ref": "SENTRY-1"
+                    },
+                    {
+                        "name": "kerberos_reinit_interval",
+                        "value": "10"
+                    },
+                    {
+                        "name": "enable_core_dump",
+                        "value": "true"
+                    },
+                    {
+                        "name": "hive_service",
+                        "ref": "HIVE-1"
+                    },
+                    {
+                        "name": "all_admission_control_enabled",
+                        "value": "true"
+                    }
+                ],
+                "serviceType": "IMPALA"
+            },
+            {
+                "refName": "OOZIE-1",
+                "roleConfigGroups": [
+                    {
+                        "base": true,
+                        "configs": [
+                            {
+                                "name": "oozie_database_host",
+                                "value": "192.168.56.201"
+                            },
+                            {
+                                "name": "oozie_database_type",
+                                "value": "mysql"
+                            },
+                            {
+                                "name": "oozie_database_name",
+                                "value": "oozie"
+                            },
+                            {
+                                "name": "oozie_database_user",
+                                "value": "oozie"
+                            },
+                            {
+                                "name": "oozie_database_password",
+                                "value": "oozie_password"
+                            },
+                            {
+                                "name": "oozie_workflow_extension_schemas",
+                                "value": ",ssh-action-0.1.xsd,hive-action-0.3.xsd,sqoop-action-0.3.xsd,shell-action-0.2.xsd,shell-action-0.1.xsd"
+                            },
+                            {
+                                "name": "oozie_config_safety_valve",
+                                "value": "\n<property>\n<name>oozie.action.launcher.mapreduce.job.ubertask.enable</name>\n<value>false</value>\n</property>"
+                            }
+                        ],
+                        "refName": "OOZIE-1-OOZIE_SERVER-BASE",
+                        "roleType": "OOZIE_SERVER"
+                    }
+                ],
+                "serviceConfigs": [
+                    {
+                        "name": "oozie_upload_sharelib_cmd_timeout",
+                        "value": "540"
+                    },
+                    {
+                        "name": "hive_service",
+                        "ref": "HIVE-1"
+                    },
+                    {
+                        "name": "mapreduce_yarn_service",
+                        "ref": "YARN-1"
+                    },
+                    {
+                        "name": "spark_on_yarn_service",
+                        "ref": "SPARK_ON_YARN-1"
+                    },
+                    {
+                        "name": "zookeeper_service",
+                        "ref": "ZOOKEEPER-1"
+                    }
+                ],
+                "serviceType": "OOZIE"
+            },
+            {
+                "refName": "SENTRY-1",
+                "roleConfigGroups": [
+                    {
+                        "base": true,
+                        "refName": "SENTRY-1-GATEWAY-BASE",
+                        "roleType": "GATEWAY"
+                    },
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "SENTRY-1-SENTRY_SERVER-BASE",
+                        "roleType": "SENTRY_SERVER"
+                    }
+                ],
+                "serviceConfigs": [
+                    {
+                        "name": "sentry_server_database_host",
+                        "value": "192.168.56.201"
+                    },
+                    {
+                        "name": "sentry_server_database_type",
+                        "value": "mysql"
+                    },
+                    {
+                        "name": "sentry_server_database_name",
+                        "value": "sentry"
+                    },
+                    {
+                        "name": "sentry_server_database_user",
+                        "value": "sentry"
+                    },
+                    {
+                        "name": "sentry_server_database_password",
+                        "value": "sentry_password"
+                    },
+                    {
+                        "name": "zookeeper_service",
+                        "ref": "ZOOKEEPER-1"
+                    },
+                    {
+                        "name": "hdfs_service",
+                        "ref": "HDFS-1"
+                    }
+                ],
+                "serviceType": "SENTRY"
+            },
+            {
+                "refName": "SPARK_ON_YARN-1",
+                "roleConfigGroups": [
+                    {
+                        "base": true,
+                        "refName": "SPARK_ON_YARN-1-GATEWAY-BASE",
+                        "roleType": "GATEWAY"
+                    },
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "SPARK_ON_YARN-1-SPARK_YARN_HISTORY_SERVER-BASE",
+                        "roleType": "SPARK_YARN_HISTORY_SERVER"
+                    }
+                ],
+                "serviceConfigs": [
+                    {
+                        "name": "yarn_service",
+                        "ref": "YARN-1"
+                    }
+                ],
+                "serviceType": "SPARK_ON_YARN"
+            },
+            {
+                "refName": "YARN-1",
+                "roleConfigGroups": [
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "YARN-1-JOBHISTORY-BASE",
+                        "roleType": "JOBHISTORY"
+                    },
+                    {
+                        "base": true,
+                        "configs": [
+                            {
+                                "name": "mapred_submit_replication",
+                                "value": "1"
+                            },
+                            {
+                                "name": "mapred_reduce_tasks",
+                                "value": "6"
+                            }
+                        ],
+                        "refName": "YARN-1-GATEWAY-BASE",
+                        "roleType": "GATEWAY"
+                    },
+                    {
+                        "base": true,
+                        "configs": [
+                            {
+                                "name": "yarn_nodemanager_local_dirs",
+                                "variable": "YARN_NODEMANAGER_LOCAL_DIRS"
+                            },
+                            {
+                                "name": "yarn_nodemanager_log_dirs",
+                                "variable": "YARN_NODEMANAGER_LOG_DIRS"
+                            }
+                        ],
+                        "refName": "YARN-1-NODEMANAGER-BASE",
+                        "roleType": "NODEMANAGER"
+                    },
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "YARN-1-RESOURCEMANAGER-BASE",
+                        "roleType": "RESOURCEMANAGER"
+                    }
+                ],
+                "serviceConfigs": [
+                    {
+                        "name": "cm_yarn_container_usage_job_user",
+                        "value": "cmjobuser"
+                    },
+                    {
+                        "name": "zookeeper_service",
+                        "ref": "ZOOKEEPER-1"
+                    },
+                    {
+                        "name": "hdfs_service",
+                        "ref": "HDFS-1"
+                    },
+                    {
+                        "name": "hadoop_secure_web_ui",
+                        "value": "true"
+                    },
+                    {
+                        "name": "cm_yarn_enable_container_usage_aggregation",
+                        "value": "true"
+                    }
+                ],
+                "serviceType": "YARN"
+            },
+            {
+                "refName": "ZOOKEEPER-1",
+                "roleConfigGroups": [
+                    {
+                        "base": true,
+                        "configs": [],
+                        "refName": "ZOOKEEPER-1-SERVER-BASE",
+                        "roleType": "SERVER"
+                    }
+                ],
+                "serviceConfigs": [
+                    {
+                        "name": "zookeeper_datadir_autocreate",
+                        "value": "true"
+                    },
+                    {
+                        "name": "enableSecurity",
+                        "value": "true"
+                    }
+                ],
+                "serviceType": "ZOOKEEPER"
+            }
+        ]
+    }
+}

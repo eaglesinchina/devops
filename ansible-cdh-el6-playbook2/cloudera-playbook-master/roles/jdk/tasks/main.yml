@@ -1,0 +1,27 @@
+---
+- name: Install Java8 from RPM
+  yum:
+    disablerepo: "*"
+    name:
+    - "{{ cdh_install_files_dir }}/jdk/jdk-8u211-linux-x64.rpm"
+    state: installed
+
+- name: Capture installed Java provider
+  raw: /usr/bin/java -version 2>&1 | egrep -o 'Java\(TM\)|OpenJDK' | sed 's/Java(TM)/Oracle/' | tr '[A-Z]' '[a-z]' | head -1
+  register: provider
+
+- name: Capture installed Java version
+  raw: /usr/bin/java -version 2>&1 | grep version | tr -d '"' | tr "_" " " | awk '{print $3"\n"$4}'
+  register: version
+
+- set_fact:
+    installed_jdk_provider: "{{ provider.stdout_lines[0] }}" 
+    installed_jdk_version: "{{ version.stdout_lines[0] }}"
+    installed_jdk_update: "{{ version.stdout_lines[1] }}"
+
+
+- name: Enable Unlimited Strength Policy (Oracle JDK8 after u151)
+  include_tasks: install_jce_from_config.yml
+  vars: 
+    java_home: /usr/java/default
+  when: installed_jdk_provider == 'oracle' and installed_jdk_version == '1.8.0' and installed_jdk_update|int >= 151

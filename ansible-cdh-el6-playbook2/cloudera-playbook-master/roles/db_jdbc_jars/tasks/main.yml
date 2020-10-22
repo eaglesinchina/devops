@@ -1,0 +1,44 @@
+---
+
+- name: Create /usr/share/java directory
+  file:
+    path: /usr/share/java
+    state: directory
+    mode: 0755
+
+### add mysql-connect-java.jar
+- stat:
+    path: /usr/share/java/mysql-connector-java.jar
+  register: mysql_connector_java
+
+- name: Copy MySQL Connector/J jar file to correct location
+  copy:
+    src: "{{ cdh_install_files_dir }}/db_jdbc_jars/mysql-connector-java.jar"
+    dest: /usr/share/java/mysql-connector-java.jar
+    mode: 0644
+  when: not mysql_connector_java.stat.exists
+
+
+### add odjbc.jar
+- stat:
+    path: /usr/share/java/ojdbc6.jar
+  register: ojdbc
+
+- name: Copy odjbc.jar  to /usr/share/java
+  copy:
+    src: "{{ cdh_install_files_dir }}/db_jdbc_jars/ojdbc6.jar"
+    dest: /usr/share/java/
+    mode: 0644
+  when: not ojdbc.stat.exists
+
+### add mssql-jdbc.jar
+- stat:
+    path: /usr/share/java/mssql-jdbc-7.2.1.jre8.jar
+  register: mssql_jdbc
+
+- name: Copy mssql_jdbc  to /usr/share/java
+  copy:
+    src: "{{ cdh_install_files_dir }}/db_jdbc_jars/mssql-jdbc-7.2.1.jre8.jar"
+    dest: /usr/share/java/
+    mode: 0644
+  when: not mssql_jdbc.stat.exists

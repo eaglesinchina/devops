@@ -1,0 +1,83 @@
+{
+  "refName": "HDFS-1",
+  "serviceType": "HDFS",
+  "serviceConfigs": [
+    {
+      "name": "dfs_namenode_acls_enabled",
+      "value": "false"
+    }, {
+      "name": "hadoop_security_authorization",
+      "value": "false"
+    }, {
+      "name": "hadoop_security_authentication",
+      "value": "simple"
+    }, {
+      "name": "dfs_ha_fencing_methods",
+      "value": "shell(true)"
+    }, {
+      "name": "hadoop_secure_web_ui",
+      "value": "false"
+    }, {
+      "name": "zookeeper_service",
+      "ref": "ZOOKEEPER-1"
+    }
+  ],
+  "roleConfigGroups": [
+    {
+      "refName": "HDFS-1-FAILOVERCONTROLLER-BASE",
+      "roleType": "FAILOVERCONTROLLER",
+      "configs": [],
+      "base": true
+    }, {
+      "refName": "HDFS-1-DATANODE-BASE",
+      "roleType": "DATANODE",
+      "configs": [
+        {
+          "name": "dfs_data_dir_list",
+          "variable": "DFS_DATA_DIR_LIST"
+        }
+         , {
+          "name": "dfs_datanode_port",
+          "value": "50010"
+        }, {
+          "name": "dfs_datanode_http_port",
+          "value": "50075"
+        }
+      ],
+      "base": true
+    }, {
+      "refName": "HDFS-1-SECONDARYNAMENODE-BASE",
+      "roleType": "SECONDARYNAMENODE",
+      "configs": [
+        {
+          "name": "fs_checkpoint_dir_list",
+          "variable": "FS_CHECKPOINT_DIR_LIST"
+        }
+      ],
+      "base": true
+    }, {
+      "refName": "HDFS-1-NAMENODE-BASE",
+      "roleType": "NAMENODE",
+      "configs": [
+         {
+          "name": "dfs_name_dir_list",
+          "variable": "DFS_NAME_DIR_LIST"
+        }
+      ],
+      "base": true
+    }, {
+      "refName": "HDFS-1-JOURNALNODE-BASE",
+      "roleType": "JOURNALNODE",
+      "configs": [
+        {
+          "name": "dfs_journalnode_edits_dir",
+          "variable": "DFS_JOURNALNODE_EDITS_DIR"
+        }
+      ],
+      "base": true
+    }
+  ],
+  "roles": [
+
+  ]
+}

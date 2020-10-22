@@ -1,0 +1,76 @@
+---
+
+mysql_datadir: /var/lib/mysql
+mysql_socket: /var/lib/mysql/mysql.sock
+mysql_port: 3306
+mysql_log_bin: /var/lib/mysql/mysql_binary_log
+mysql_log_dir: /var/log/mysql
+mysql_log: "{{ mysql_log_dir }}/mysql.log"
+mysql_pid_dir: /var/run/mysql
+mysql_pid_file: "{{ mysql_pid_dir }}/mysql.pid"
+mysql_innodb_log_buffer_size: 64M
+mysql_innodb_buffer_pool_size: 4G
+mysql_root_password: yskj
+
+# Supported database types: mysql,postgresql,...
+database_type: mysql
+
+databases:
+  scm:
+    name: 'scm'
+    user: 'scm'
+    pass: 'scm'
+    type: '{{ database_type }}'
+
+  rman:
+    name: 'rman'
+    user: 'rman'
+    pass: 'rman'
+    type: '{{ database_type }}'
+
+  metastore:
+    name: 'hive'
+    user: 'hive'
+    pass: 'hive'
+    type: '{{ database_type }}'
+  hue:
+    name: 'hue'
+    user: 'hue'
+    pass: 'hue'
+    type: '{{ database_type }}'
+  oozie:
+    name: 'oozie'
+    user: 'oozie'
+    pass: 'oozie'
+    type: '{{ database_type }}'
+
+
+#  amon:
+#    name: 'amon'
+#    user: 'amon'
+#    pass: 'amon'
+#    type: '{{ database_type }}'
+#  nav:
+#    name: 'nav'
+#    user: 'nav'
+#    pass: 'nav'
+#    type: '{{ database_type }}'
+#  navms:
+#    name: 'navms'
+#    user: 'navms'
+#    pass: 'navms'
+#    type: '{{ database_type }}'
+
+
+
+#  das:
+#    name: 'das'
+#    user: 'das'
+#    pass: 'das'
+#    type: '{{ database_type }}'
+#  ranger:
+#    name: 'ranger'
+#    user: 'ranger'
+#    pass: 'ranger'
+#    type: '{{ database_type }}'
+

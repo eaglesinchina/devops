@@ -1,0 +1,61 @@
+---
+
+- name: copy all files to {{ cdh_install_files_dir }}
+  copy:
+    src: db_mysql_rpms
+    dest: "{{ cdh_install_files_dir }}/"
+
+- name: Install mysql packages
+  yum:
+    disablerepo: "*"
+    name:
+    - "{{ cdh_install_files_dir }}/db_mysql_rpms/MySQL-client-5.5.62-1.el6.x86_64.rpm"
+    - "{{ cdh_install_files_dir }}/db_mysql_rpms/MySQL-devel-5.5.62-1.el6.x86_64.rpm"
+    - "{{ cdh_install_files_dir }}/db_mysql_rpms/MySQL-embedded-5.5.62-1.el6.x86_64.rpm"
+    - "{{ cdh_install_files_dir }}/db_mysql_rpms/MySQL-server-5.5.62-1.el6.x86_64.rpm"
+    - "{{ cdh_install_files_dir }}/db_mysql_rpms/MySQL-shared-5.5.62-1.el6.x86_64.rpm"
+    - "{{ cdh_install_files_dir }}/db_mysql_rpms/MySQL-shared-compat-5.5.62-1.el6.x86_64.rpm"
+    - "{{ cdh_install_files_dir }}/db_mysql_rpms/MySQL-python-1.2.3-0.3.c1.1.el6.x86_64.rpm"
+    state: installed
+
+- name: Create mysql configuration file
+  template:
+    src: my.cnf.j2
+    dest: /etc/my.cnf
+  notify:
+    - restart mysql
+
+- name: Create MariaDB log dir
+  file:
+    path: "{{ mysql_log_dir }}"
+    state: directory
+    owner: mysql
+    group: mysql
+    mode: 0775
+
+- name: Create MariaDB log file
+  file:
+    path: "{{ mysql_log }}"
+    state: touch
+    owner: mysql
+    group: mysql
+    mode: 0775
+
+- name: Create MariaDB PID directory
+  file:
+    path: "{{ mysql_pid_dir }}"
+    state: directory
+    owner: mysql
+    group: mysql
+    mode: 0775
+
+- name: Start MariaDB Service
+  service:
+    name: mysql
+    state: started
+    enabled: yes
+
+- include: mysql_secure_installation.yml
+- include: databases.yml
+
+

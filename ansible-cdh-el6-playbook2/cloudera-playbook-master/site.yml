@@ -1,0 +1,73 @@
+---
+# Cloudera playbook
+- name: copy cdh files to /tmp/cdh/
+  hosts: cdh_servers
+  roles:
+    - copy_files
+  tags: copy_files
+
+- name: Install rngd
+  hosts: cdh_servers
+  roles:
+    - rngd
+  tags: rngd
+
+- name: modify sys_env
+  hosts: cdh_servers
+  roles:
+    - sys_env
+  tags: sys_env
+
+- name: Install jdk
+  hosts: cdh_servers
+  roles:
+    - jdk
+  tags: jdk
+
+- name: Install deps
+  hosts: cdh_servers
+  roles:
+    - rpm_deps
+  tags: rpm_deps
+
+- name: Install MySQL and create databases
+  hosts: db_server
+  roles:
+    - db_mysql
+  tags:
+    - db_mysql
+    - mysql_server
+
+- name: Install MySQL Connector
+  hosts: cdh_servers
+  roles:
+    - db_jdbc_jars
+  tags:
+    - db_jdbc_jars
+    - mysql_client
+
+###################################################
+- name: Install Cloudera Manager Agents
+  hosts: worker_servers 
+  roles:
+    - cm_agents
+  tags: cm_agents
+
+- name: Install Cloudera Manager Server
+  hosts: cm_server
+  roles:
+    - cm_server
+  tags: cm_server
+
+###################################################
+- name: Install Cloudera Manager Server
+  hosts: cm_server
+  roles:
+    - scm
+  tags: scm
+
+- name: Install CDH
+  hosts: cm_server
+  roles:
+    - cdh
+  tags: cdh

@@ -1,0 +1,60 @@
+---
+- include_vars: ../../../group_vars/cdh_servers.yml
+
+- name: create user for cm,cdh cluster
+  include: user_create.yml
+
+- name: config ntp
+  template:
+    src: ntp.conf.agent.j2
+    dest: /etc/ntp.conf
+    mode: 0644
+
+- name: start ntpd
+  service:
+    name: ntpd
+    state: restarted
+    enabled: yes
+
+
+- stat:
+    path: /opt/cloudera/parcel-repo
+  register: cm_exists
+
+
+- name: Install Cloudera Manager Agents
+  unarchive:
+    src: "{{ cdh_install_files_dir }}/cm_packages/cloudera-manager-el6-cm5.12.2_x86_64.tar.gz"
+    dest: "/opt/"
+    owner: "cloudera-scm"
+    group: "cloudera-scm"
+  when: not cm_exists.stat.exists
+
+
+- name: Configure Cloudera Manager Agent 'server_host'
+  lineinfile:
+    dest: /opt/cm-5.12.2/etc/cloudera-scm-agent/config.ini
+    regexp: "^server_host"
+    line: "server_host={{ hostvars[scm_hostname]['inventory_hostname'] }}"
+
+# copy init.d script as service
+- name: copy cloudera-scm-agent script to init.d
+  template:
+    src: cloudera-scm-agent.service.j2
+    dest: /etc/init.d/cloudera-scm-agent
+    mode: 0755
+
+
+#####启动前，先拷贝jdbc驱动
+- name: copy jdbc-jars to cloudera manager
+  copy:
+    src: /usr/share/java/
+    dest: /opt/cm-5.12.2/share/cmf/lib/
+    owner: "cloudera-scm"
+    group: "cloudera-scm"
+
+- name: Restart Cloudera Manager Agents
+  service:
+    name: cloudera-scm-agent
+    state: restarted
+    enabled: yes

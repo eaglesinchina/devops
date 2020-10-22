@@ -1,0 +1,8 @@
+---
+
+- name: Create user 'cloudera-scm'
+  user:
+    name: cloudera-scm
+    home: /opt/cloudera
+    shell: /sbin/nologin
+    system: yes

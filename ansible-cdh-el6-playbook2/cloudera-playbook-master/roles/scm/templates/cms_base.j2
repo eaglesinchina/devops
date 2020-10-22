@@ -1,0 +1,71 @@
+{
+  "name": "mgmt",
+  "type": "MGMT",
+  "roles": [
+    {
+      "name": "mgmt-SERVICEMONITOR",
+      "type": "SERVICEMONITOR",
+      "hostRef": {
+        "hostId": "{{ scm_hosts['ids'][scm_hostname] }}"
+      }
+    },  {
+      "name": "mgmt-HOSTMONITOR",
+      "type": "HOSTMONITOR",
+      "hostRef": {
+        "hostId": "{{ scm_hosts['ids'][scm_hostname] }}"
+      }
+    },  {
+      "name": "mgmt-EVENTSERVER",
+      "type": "EVENTSERVER",
+      "hostRef": {
+        "hostId": "{{ scm_hosts['ids'][scm_hostname] }}"
+      }
+    }, {
+      "name": "mgmt-ALERTPUBLISHER",
+      "type": "ALERTPUBLISHER",
+      "hostRef": {
+        "hostId": "{{ scm_hosts['ids'][scm_hostname] }}"
+      }
+    }, {
+      "name": "mgmt-REPORTSMANAGER",
+      "type": "REPORTSMANAGER",
+      "roleConfigGroupRef": {
+        "roleConfigGroupName": "mgmt-REPORTSMANAGER-BASE"
+      },
+      "hostRef": {
+        "hostId": "{{ scm_hosts['ids'][scm_hostname] }}"
+      }
+    }
+  ],
+
+  "roleConfigGroups": [{
+      "name": "mgmt-REPORTSMANAGER-BASE",
+      "displayName": "Reports Manager Default Group",
+      "roleType": "REPORTSMANAGER",
+      "base": true,
+      "serviceRef": {
+        "serviceName": "mgmt"
+      },
+      "config": {
+        "items": [
+          {
+            "name": "headlamp_database_host",
+            "value": "{{ hostvars[db_hostname]['inventory_hostname'] }}"
+          }, {
+            "name": "headlamp_database_name",
+            "value": "{{ databases.rman.name }}"
+          }, {
+            "name": "headlamp_database_password",
+            "value": "{{ databases.rman.pass }}"
+          }, {
+            "name": "headlamp_database_type",
+            "value": "{{ databases.rman.type }}"
+          }, {
+            "name": "headlamp_database_user",
+            "value": "{{ databases.rman.user }}"
+          }
+        ]
+      }
+    }]
+}
+

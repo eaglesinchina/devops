@@ -1,0 +1,21 @@
+---
+
+- name: ensure rng-tools is installed
+  yum:
+    disablerepo: "*"
+    name:
+    - "{{ cdh_install_files_dir }}/rngd/rng-tools-5-2.el6_7.x86_64.rpm"
+    state: installed
+
+- name: Create rngd configuration file
+  template:
+    src: rngd.sysconfig.j2
+    dest: /etc/sysconfig/rngd
+  notify:
+    - restart rngd
+
+- name: ensure rngd is running
+  service:
+    name: rngd
+    state: started
+    enabled: yes

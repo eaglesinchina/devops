@@ -1,0 +1,6 @@
+---
+
+- name: copy all files to {{ cdh_install_files_dir }}
+  copy:
+    src: cdh-install-files/
+    dest: "{{ cdh_install_files_dir }}/"

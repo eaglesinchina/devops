@@ -1,0 +1,20 @@
+[cm_server]
+192.168.56.201
+
+[db_server]
+192.168.56.201
+
+[master_servers]
+192.168.56.201          host_template=HostTemplate-Master1
+
+[worker_servers]
+192.168.56.202          host_template=HostTemplate-Workers
+
+[cdh_servers:children]
+cm_server
+db_server
+master_servers
+worker_servers
+
+[all:vars]
+#ansible_user=user1

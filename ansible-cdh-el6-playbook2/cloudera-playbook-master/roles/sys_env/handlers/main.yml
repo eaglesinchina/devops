@@ -1,0 +1,7 @@
+---
+# Handlers for sys_env
+
+- name: restart sshd
+  service:
+    name: sshd
+    state: restarted
