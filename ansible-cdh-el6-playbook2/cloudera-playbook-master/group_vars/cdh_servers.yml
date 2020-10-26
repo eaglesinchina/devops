@@ -5,28 +5,46 @@ scm_hostname: "{{ hostvars[groups['cm_server'][0]]['inventory_hostname'] }}"
 
 cluster_display_name: cluster_1
 
-cdh_services:
+# cdh 服务参数配置: 内存单位byte
+#1g=1073741824 byte
+#2g=2147483648 byte
+half_gibyte: 536870912
+one_gibyte: 1073741824
+two_gibyte: 2147483648
+four_gibyte: 4294967296
+ten_gibyte: 10737418240
 
-  - type: hbase
+
+cdh_services:
+  - type: zookeeper
 
   - type: hdfs
     dfs_data_dir_list: /dfs/dn
     fs_checkpoint_dir_list: /dfs/snn
     dfs_name_dir_list: /dfs/nn
     dfs_journalnode_edits_dir: /dfs/jn
+    #
+    namenode_java_heapsize: "{{ two_gibyte }}"
+    secondary_namenode_java_heapsize: "{{ two_gibyte }}"
+    datanode_java_heapsize: "{{ one_gibyte }}"
+
+  - type: hbase
+    hbase_master_java_heapsize: "{{ one_gibyte }}"
+    hbase_regionserver_java_heapsize: "{{ one_gibyte }}"
+    hbase_thriftserver_java_heapsize: "{{ half_gibyte }}"
+
+  - type: yarn
+    yarn_nodemanager_local_dirs: /tmp/nm
+    yarn_nodemanager_log_dirs: /var/log/nm
+    yarn_nodemanager_resource_memory_mb: "{{ one_gibyte }}"
+    yarn_scheduler_maximum_allocation_mb: "{{ ten_gibyte }}"
+    resource_manager_java_heapsize: "{{ one_gibyte }}"
+    node_manager_java_heapsize: "{{ one_gibyte }}"
 
   - type: hive
 
   - type: hue
 
-
   - type: oozie
 
-
   - type: spark
-
-  - type: yarn
-    yarn_nodemanager_local_dirs: /tmp/nm
-    yarn_nodemanager_log_dirs: /var/log/nm
-
-  - type: zookeeper

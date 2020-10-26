@@ -36,6 +36,6 @@ fi
 
 
 echo "#3, 使用ansible 安装cloudera manager
-# a, 进入目录  cloudera-playbook-master
-# b, 修改文件  hosts
-# c, 运行命令: ansible-playbook -i hosts site.yml"
+# a, 进入目录  cd cloudera-playbook-master
+# b, 修改文件  vi hosts
+# c, 运行命令: ansible-playbook -i hosts site.yml -v "

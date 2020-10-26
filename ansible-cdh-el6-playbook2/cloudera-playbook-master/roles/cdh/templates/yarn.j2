@@ -18,12 +18,13 @@
       "name": "cm_yarn_enable_container_usage_aggregation",
       "value": "true"
     }
+
   ],
   "roleConfigGroups": [
     {
       "refName": "YARN-1-JOBHISTORY-BASE",
       "roleType": "JOBHISTORY",
-      "configs": [],
+      "configs": [ ],
       "base": true
     }, {
       "refName": "YARN-1-GATEWAY-BASE",
@@ -42,19 +43,26 @@
       "refName": "YARN-1-NODEMANAGER-BASE",
       "roleType": "NODEMANAGER",
       "configs": [
-        {
-          "name": "yarn_nodemanager_local_dirs",
-          "variable": "YARN_NODEMANAGER_LOCAL_DIRS"
-        }, {
-          "name": "yarn_nodemanager_log_dirs",
-          "variable": "YARN_NODEMANAGER_LOG_DIRS"
-        }
+                {
+                  "name": "yarn_nodemanager_local_dirs",
+                  "variable": "YARN_NODEMANAGER_LOCAL_DIRS"
+                }, {
+                  "name": "yarn_nodemanager_log_dirs",
+                  "variable": "YARN_NODEMANAGER_LOG_DIRS"
+                },
+                {
+                  "name" : "node_manager_java_heapsize",
+                  "variable": "NODE_MANAGER_JAVA_HEAPSIZE"
+                }
       ],
       "base": true
     }, {
       "refName": "YARN-1-RESOURCEMANAGER-BASE",
       "roleType": "RESOURCEMANAGER",
-      "configs": [],
+      "configs": [{
+                      "name" : "resource_manager_java_heapsize",
+                      "variable": "RESOURCE_MANAGER_JAVA_HEAPSIZE"
+                    }],
       "base": true
     }
   ]

@@ -17,17 +17,26 @@
     {
       "refName": "HBASE-1-MASTER-BASE",
       "roleType": "MASTER",
-      "configs": [],
+      "configs": [{
+                      "name": "hbase_master_java_heapsize",
+                      "variable": "HBASE_MASTER_JAVA_HEAPSIZE"
+                    }],
       "base": true
     }, {
       "refName": "HBASE-1-REGIONSERVER-BASE",
       "roleType": "REGIONSERVER",
-      "configs": [],
+      "configs": [{
+                        "name": "hbase_regionserver_java_heapsize",
+                        "variable": "HBASE_REGIONSERVER_JAVA_HEAPSIZE"
+                  }],
       "base": true
     }, {
       "refName": "HBASE-1-HBASETHRIFTSERVER-BASE",
       "roleType": "HBASETHRIFTSERVER",
-      "configs": [],
+      "configs": [{
+                      "name": "hbase_thriftserver_java_heapsize",
+                      "variable": "HBASE_THRIFTSERVER_JAVA_HEAPSIZE"
+                }],
       "base": true
     }, {
       "refName": "HBASE-1-HBASERESTSERVER-BASE",
