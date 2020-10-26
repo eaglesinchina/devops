@@ -1,3 +1,4 @@
+#!/bin/bash
 dir=$(dirname $(readlink $0 -f )   )
 cd $dir
 
