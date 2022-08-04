@@ -1,0 +1,102 @@
+{{- $fullName := include "app.fullname" . }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "app.name" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+    app: {{ include "app.name" . }}
+    chart: {{ include "spring.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "app.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "app.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          command: ["/bin/sh"]
+          args: ["-c", {{ .Values.command }}]
+          image: "{{ .Values.global.image.repositoryHost }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          lifecycle:
+            postStart:
+              exec:
+                command: [ "/bin/bash","-c","/script/common/init-env.sh" ]
+          env:
+            {{- range $key, $value := .Values.extraEnv }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+            {{- end }}
+          volumeMounts:
+              {{- range .Values.volumes }}
+              {{- with . }}
+              - name: {{ .name }}
+                mountPath: {{ .mountPath }}
+                {{- if eq .type "glusterfs" }}
+                subPath: {{ .path }}
+                {{- else if eq .type "hostpath" }}
+                readOnly: {{ .readOnly }}
+                {{- end }}
+              {{- end }}
+              {{- end }}
+              - name: config-file
+                mountPath: /config
+          ports:
+            - name: http
+              containerPort: {{ .Values.containerPort }}
+              protocol: TCP
+          {{- if .Values.liveness.enabled }}
+          livenessProbe:
+{{ toYaml .Values.liveness.probe | indent 12 }}
+          {{- end }}
+          {{- if .Values.readiness.enabled }}
+          readinessProbe:
+{{ toYaml .Values.readiness.probe | indent 12 }}
+          {{- end }}
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+      volumes:
+        {{- $endpoints := .Values.global.glusterfs.endpoints -}}
+        {{- $path := .Values.global.glusterfs.path -}}
+        {{- range .Values.volumes }}
+        - name: {{ .name }}
+          {{- if eq .type "glusterfs" }}
+          glusterfs:
+            endpoints: {{ $endpoints }}
+            path: {{ $path }}
+            readOnly: {{ .readOnly }}
+          {{- else if eq .type "hostpath" }}
+          hostPath:
+            path: {{ .path }}
+          {{- end }}
+        {{- end }}
+        - name: config-file
+          configMap:
+            name: {{ include "app.fullname" . }}-config
+      hostAliases:
+        {{- range .Values.global.hostAliases }}
+      - ip: {{ .ip }}
+        hostnames:
+        - {{ .hostnames }}
+        {{- end }}

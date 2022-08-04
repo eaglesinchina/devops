@@ -1,0 +1,83 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "app.fullname" . }}-config
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+    app: {{ include "app.name" . }}
+    chart: {{ include "spring.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+data:
+  application-dev.yaml: |-
+    spring:
+      datasource:
+        url: jdbc:mysql://{{ .Values.global.mysql.baseUrl }}/{{ .Values.global.mysql.dbName }}?useSSL=true&autoReconnect=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=Hongkong&&allowMultiQueries=true
+        username: {{ .Values.global.mysql.username }}
+        password: {{ .Values.global.mysql.password }}
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        type: com.zaxxer.hikari.HikariDataSource
+        hikari:
+          max-lifetime: 1800000
+          maximum-pool-size: 40
+          connection-timeout: 60000
+          validation-timeout: 3000
+          idle-timeout: 60000
+          minimum-idle: 1
+    kuai:
+      monitorUrl: http://kuai-monitor/monitor/
+      deployUrl: http://kuai-deploy/deploy/
+      deploy:
+        engine:
+          path: /kuai/deploy/server
+      imageRepository:
+        address: {{ .Values.global.kuai.imageRepository.address }}
+        prefix: {{ .Values.global.kuai.imageRepository.prefix }}
+        user: {{ .Values.global.kuai.imageRepository.user }}
+        password: {{ .Values.global.kuai.imageRepository.password }}
+      erp:
+        appCode: {{ .Values.global.kuai.erp.appCode }}
+        safetyKey: {{ .Values.global.kuai.erp.safetyKey }}
+        bizid: {{ .Values.global.kuai.erp.bizid }}
+      table:
+        url: {{ .Values.global.kuai.table.url }}
+        env: {{ .Values.global.kuai.table.env }}
+      k8s:
+        dgroup: {{ .Values.global.kuai.k8s.dgroup }}
+        path: {{ .Values.global.kuai.k8s.path }}
+        auth: {{ .Values.global.kuai.k8s.auth }}
+      ceph:
+        user: 
+        mon:
+          host: 
+        key: 
+        monitors: 
+    file:
+      netdisk: /ceph/netdisk/
+      deploy: /ceph/deploy/
+    cors:
+      domain:  {{ .Values.global.cors.domain }}
+    auth:
+      url:  {{ .Values.global.auth.url }}
+    uas:
+      invalid: {{ .Values.global.uas.invalid }}
+      login.system: {{ .Values.global.uas.login.system }}
+      salt: {{ .Values.global.uas.salt }}
+      app.url: {{ .Values.global.uas.app.url }}
+      uas.url: {{ .Values.global.uas.uas.url }}
+      home.url: {{ .Values.global.uas.home.url }}
+      asm.url: {{ .Values.global.uas.asm.url }}
+      cookie.cipherKey: {{ .Values.global.uas.cookie.cipherKey }}
+      cookie.domain: {{ .Values.global.uas.cookie.domain }}
+      cookie.maxAge: {{ .Values.global.uas.cookie.maxAge }}
+      exclude.path: {{ .Values.global.uas.exclude.path }}
+    login:
+      address: {{ .Values.global.login.address }}
+      exclude:
+        path: {{ .Values.global.login.exclude.path }}
+      sso:
+        url: {{ .Values.global.login.sso.url }}
+        invalid: {{ .Values.global.login.sso.invalid }}
+        cookieName: {{ .Values.global.login.sso.cookieName }}
+        appKey: {{ .Values.global.login.sso.appKey }}
+        appToken: {{ .Values.global.login.sso.appToken }}

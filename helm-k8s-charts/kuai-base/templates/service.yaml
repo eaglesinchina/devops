@@ -1,0 +1,50 @@
+{{- if and .Values.service.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "app.name" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  {{- if and .Values.service.ambassador.enabled }}
+  annotations:
+    getambassador.io/config: |
+      ---
+      apiVersion: ambassador/v1
+      kind:  Mapping
+      name: {{ template "app.name" . }}
+      service: {{ template "app.name" . }}.{{ .Release.Namespace }}
+      prefix: {{ .Values.service.ambassador.annotations.prefix }}
+      rewrite: {{ .Values.service.ambassador.annotations.rewrite }}
+      timeout_ms: {{ .Values.service.ambassador.annotations.timeout_ms }}
+      use_websocket: {{ .Values.service.ambassador.annotations.use_websocket }}
+  {{- end }}
+  labels:
+    app: {{ template "app.name" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  type: {{ .Values.service.type }}
+  {{- if (or (eq .Values.service.type "LoadBalancer") (eq .Values.service.type "NodePort")) }}
+  {{- if hasKey .Values.service "externalTrafficPolicy" -}}
+  externalTrafficPolicy: {{ .Values.service.externalTrafficPolicy | quote }}
+  {{- end }}
+  {{- end }}
+  {{- if eq .Values.service.type "LoadBalancer" }}
+  loadBalancerIP: {{ default "" .Values.service.loadBalancerIP | quote }}
+  {{- end }}
+  ports:
+  - name: http
+    port: {{ .Values.service.httpPort }}
+{{- if hasKey .Values.service "protocol" }}
+    protocol: {{ .Values.service.protocol }}
+{{- end }}
+{{- if hasKey .Values.service "targetPort" }}
+    targetPort: {{ .Values.service.targetPort }}
+{{- end }}
+{{- if hasKey .Values.service "nodePort" }}
+    nodePort: {{ .Values.service.nodePort }}
+{{- end }}
+  selector:
+    app: {{ template "app.name" . }}
+    release: {{ .Release.Name | quote }}
+{{- end -}}

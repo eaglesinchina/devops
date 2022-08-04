@@ -1,0 +1,168 @@
+# Default values for kuai.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+global:
+  configfile: global
+  mysql:
+    # kuai业务系统使用 sql数据库地址
+    baseUrl: 192.168.0.8:3306
+    # kuai库名
+    dbName: kuai
+    # kuai数据库用户名
+    username: root
+    # kuai数据库密码
+    password: 123456
+    # kuai-grafana监控使用 sql数据库地址
+    grafanaBaseUrl:  192.168.0.8:3306
+    # grafana数据库名
+    grafanaDbName: grafana
+    # grafana数据库用户名
+    grafanaUsername: root
+    # grafana数据库用密码
+    grafanaPassword: 123456
+  glusterfs:
+    endpoints: glusterfs-kuai
+    # glusterfs挂载盘名称
+    path: dir_rep_vol_01
+    # glusterfs IP地址
+    addresses:
+      - ip: 192.168.0.9
+      - ip: 192.168.0.10
+      - ip: 192.168.0.11
+  image:
+    #harbor配置
+    repositoryHost: harbor01.io
+  hostAliases:
+    #harbor地址
+    - ip: "192.168.0.9"
+      hostnames: "harbor01.io"
+  kuai:
+    userServerUrl: http://linking-kuai-api.ocean.bigdata/kuai-serving/
+    clusterTag: kuai
+    #镜像库
+    imageRepository:
+      address: http://harbor01.io
+      prefix: harbor01.io
+      user: admin
+      password: Harbor12345
+    hadoop:
+      #5k url(暂未接入5k,不用配置)
+      url: hdfs://ns7/extdata/kuai/mlmodel
+      clusterId: 52
+    #调用人资接口，批量/单个获取用户信息接口的配置(暂未用到,不用配置)
+    erp:
+      appCode: "001"
+      safetyKey: abc123
+      bizid: "002"
+    #调用bdp-integration用到
+    gravity:
+      token: 98d095ca-09a1-11e9-a1a7-005056872935
+    sockjs:
+      url: ""
+    table:
+      #获取用户有查询权限的所有库表接口的地址
+      #url: http://dev-ocean-flowyed-gateway.jdd.com:8170/common-authority/
+      url: 
+      #用户有查询权限的集群编号，根据接口http://test.api-gateway.gly.com:8170/common-authority/authority/v1/cluster_query/{user}/list获取
+      #env: 52
+      env: 
+    k8s:
+      dgroup: used-for
+      path:
+      auth: "{Authorization: 'token f1cc9aaf0030413fa151462429a09cdc'}"
+    #请求用户kerberos信息服务
+    kerberos:
+      url: http://192.168.54.45:8170
+    livyServers: 192.168.29.158
+  cors:
+    domain: ocean.bigdata
+  #获取用户信息接口
+  auth:
+    url: http://192.168.0.8:17081/restful
+    #url: http://linking-asm-core.ocean.bigdata/restful
+  #单点登陆配置  uas/sso 2选1  invalid false 时，走所属配置
+  uas:
+    invalid: false
+    login:
+      system: ocean #uas控制台接入应用列表 应用名
+    salt: dd8c6f05ca024b30bb0a655e09fd3637 #uas控制台接入应用列表 salt
+    app:
+      url: http://uas-web.bgd  #uas后台api访问url
+      #url: http://192.168.0.8:8080  #uas后台api访问url
+    uas:
+      url: http://uas-web.bgd  #uas控制台地址,测试:http://192.168.114.28:8190、生产:https://upms.HADOOP.COM
+      #url: http://192.168.0.8:8080  #uas控制台地址,测试:http://192.168.114.28:8190、生产:https://upms.HADOOP.COM
+    home:
+      url: http://linking.ocean.bigdata/board
+    asm:
+      url: http://linking-asm-core.ocean.bigdata
+    cookie:
+      cipherKey: CW9bG0LwftWBr9W5v3gWug==
+      name: ocean_ticket
+      domain: ocean.bigdata
+      maxAge: '1728000000'
+    exclude:
+      path: /static,/rest,/assets,/data/sync,/com.jd.api,/sheduler,/job,/restful,/uas/account/login,/static,/rest./assets,/data/sync/api,/sheduler,/base/job,/job,/healthz,/base/job,/develop/healthz,/base/healthz,/deploy/healthz,/deploy/extDeploy,/monitor/healthz,/train/healthz,/online/healthz,/gateway,/gateway/healthz,/base/panExtend/downloadFile4ZZ,/graph/healthz,/task/healthz,/graph/model/deploy,/graph/expAlgorithmTask/sparkProcess
+  login:
+    address: http://ocean-ssa.jdfcloud.com/sso/login
+    exclude:
+      path: /static,/rest./assets,/data/sync/api,/sheduler,/base/job,/job,/healthz,/base/job,/develop/healthz,/base/healthz,/deploy/healthz,/deploy/extDeploy,/monitor/healthz,/train/healthz,/online/healthz,/gateway,/gateway/healthz,/base/panExtend/downloadFile4ZZ,/graph/healthz,/task/healthz,/graph/model/deploy,/graph/expAlgorithmTask/sparkProcess
+    sso:
+      url: http://ocean-ssa.jdfcloud.com:8080/
+      invalid: true
+      cookieName: jdfcloud
+      appKey: test3
+      appToken: 347c6161e79f4b6a8873202dd5fe7e8f
+  cache:
+    redis:
+      enabled: true
+      clusterid: client1
+      clustersnamespace: app1
+      clustersnodes: 192.168.0.12:7001,192.168.0.12:7002,192.168.0.12:7003,192.168.0.13:7001,192.168.0.13:7002,192.168.0.12:7003
+      clusterspassword: 
+    kafka:
+      enabled: true
+      consumer:
+        bootstrapServers: 192.168.0.12:9092,192.168.0.13:9092,192.168.0.14:9092
+        topic: ocean_gravity_job_status
+  kuaiMonitor:
+    zkMonitor: /kuai/monitor/dev
+    zookeeperConnect: 192.168.0.3:2181,192.168.0.4:2181,192.168.0.5:2181
+    fmqEnabled: false
+    fmqTransportId: channelTransport
+    fmqTransportApp: bdp_kuai_gravity
+    fmqTransportAddress: 192.168.25.244:50066
+    fmqTransportUser: bdp_kuai_gravity
+    fmqTransportPassword: 992A463C
+    fmqEpoll: true
+    fmqProducersId: producerxx
+    fmqProducersRetryTimes: 2
+    fmqConsumersId: testJmqConsumer1
+    fmqConsumersLongPull: 500
+    fmqConsumersPullInterval: 100
+    fmqTopic: ocean_gravity_job_status
+    fmqListenerBeanName: kuaiFmqConsumer
+    r2mzkConnection: 192.168.24.66:8175
+    r2mAppName: admin_bdp-ide-el-scheduler_bdp-ide-el-scheduler_bdp-ide-el-scheduler
+    r2mPassword: 26yTCYvGicuuMXF9
+    r2mToken: 0992558d3b
+    r2mEnabled: false
+  kuaiTrain:
+    cephMonitors:
+    autoMLImage: harbor01.io/automl/automl_based_centos7-py36-tf1.5-cpu:v0.1.0
+    autoMLCpu: 1
+    autoMLMen: 1
+    autoMLGpu: 0
+    tensorBoardImage: harbor01.io/train/centos7-py36-tf1.5-cpu:latest
+  kuaiGraph:
+    hiveUrl: jdbc:hive2://192.168.0.17:21066/%s;principal=hive/yz-10-222-29-54.h.abchost.local@HADOOP.COM;hive.server2.proxy.user=dwetl?useUnicode=true&characterEncoding=UTF-8
+    userName: hive
+    krbUser: hive/ocean@HADOOP.COM
+    #需cp krb5.conf覆盖/mnt/user/目krb5.conf
+    krbConfigFile: /ceph/krb5.conf
+    #默认不用动
+    keytabFile: /export/kerberos/hive.keytab
+    graph:
+      dataSourceKind: local|LocalPathStructService,mysql|MySqlStructService,hive|HiveStructService
+      image: harbor01.io/graph/visual_modeling_env:latest
+      image: harbor01.io/graph/visual_modeling_env:latest

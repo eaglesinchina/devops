@@ -1,0 +1,83 @@
+# Default values for discovery-service.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+#环境相关参数
+global:
+
+#部署相关参数
+replicaCount: 1
+containerPort: 8080
+command: "source /workspace/sgm.sh kuai-train;whoami;source /etc/profile;echo $SGM_OPTS;echo java $SGM_OPTS -Xmx2048m -Xms2048m -Xmn1024m -XX:MetaspaceSize=128m -XX:+UseConcMarkSweepGC -XX:ParallelGCThreads=2 -XX:+PrintGC -XX:+PrintGCDe
+          tails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC -Denv=DEV -jar /workspace/bdp-kuai-base/bdp-kuai-base-1.1.0/bdp-kuai-base.jar;java $SGM_OPTS -XX:+UseConcMarkSweepGC -XX:ParallelGCThreads=4 -Xmx2048m -Xms2048m -XX:MetaspaceSize=128m -XX:+PrintGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC -Denv=DEV -jar /workspace/bdp-kuai-base/bdp-kuai-base-1.1.0/bdp-kuai-base.jar"
+image:
+  repository: kuai/java
+  tag: 8
+  pullPolicy: Always
+volumes:
+  - name: jar
+    type: glusterfs
+    mountPath: /workspace
+    path: kuai/mnt/jar
+    readOnly: true
+  - name: ceph
+    type: glusterfs
+    mountPath: /ceph
+    path: kuai/mnt/user
+  - name: script
+    type: glusterfs
+    mountPath: /script
+    path: kuai/mnt/script/
+  - name: sgm
+    type: hostpath
+    mountPath: /export/package
+    path: /export/package
+    readOnly: true
+  - name: logs
+    type: hostpath
+    mountPath: /export/log
+    path: /export/log
+service:
+  enabled: true
+  httpPort: 80
+  type: ClusterIP
+  targetPort: 8080
+  protocol: TCP
+  ambassador:
+    enabled: true
+    annotations:
+      prefix: /base
+      rewrite: /base
+      use_websocket: true
+      timeout_ms: 120000
+ingress:
+  enabled: false
+  hosts:
+    - test.base.kuai.hadoop.com
+resources:
+  limits:
+    cpu: 1000m
+    memory: 4096Mi
+  requests:
+    cpu: 1000m
+    memory: 2048Mi
+liveness:
+  enabled: true
+  probe:
+    httpGet:
+      path: /base/healthz
+      port: 8080
+    initialDelaySeconds: 120
+    periodSeconds: 30
+readiness:
+  enabled: true
+  probe:
+    httpGet:
+      path: /base/healthz
+      port: 8080
+    initialDelaySeconds: 30
+    periodSeconds: 30
+nodeSelector: {"used-for":"kuai"}
+tolerations: []
+affinity: {}
+extraEnv: {}
