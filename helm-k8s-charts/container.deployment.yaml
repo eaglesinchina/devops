@@ -101,18 +101,6 @@ spec:
       dnsPolicy: ClusterFirst
       hostAliases:
       - hostnames:
-        - jsf-index-pudao-uat.local
-        ip: 11.243.32.227
-      - hostnames:
-        - r2m-3c-pudao-uat.local
-        ip: 11.243.32.227
-      - hostnames:
-        - uas-pudao-uat.jdfmgt.com
-        ip: 11.243.32.227
-      - hostnames:
-        - uas-pudao-uat.local
-        ip: 11.243.32.227
-      - hostnames:
         - harbor01.io
         ip: 11.243.32.211
       nodeSelector:
